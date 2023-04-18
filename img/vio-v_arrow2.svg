@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="697.702" height="182.071" viewBox="0 0 697.702 182.071">
+  <defs>
+    <filter id="Pfad_308" x="0" y="6.991" width="681.358" height="175.08" filterUnits="userSpaceOnUse">
+      <feOffset dx="7" dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#c8463f" flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polygon_1" x="653.543" y="0" width="44.159" height="51.905" filterUnits="userSpaceOnUse">
+      <feOffset dx="7" dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-color="#c8463f" flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Pfad_308)">
+    <path id="Pfad_308-2" data-name="Pfad 308" d="M800.977,1060.178s51.59,118.369,253.841,126.463c85.552,3.424,145.831-6.582,171.066-25.279,34.085-25.253,19.321-72.494-24.727-68.156-76.34,7.518-96.166,117.53,73.6,118.752s186.483-128.118,186.483-128.118" transform="translate(-797.19 -1049.9)" fill="none" stroke="#c8463f" stroke-linecap="round" stroke-width="5" stroke-dasharray="30"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Polygon_1)">
+    <path id="Polygon_1-2" data-name="Polygon 1" d="M9.633,4.872a2,2,0,0,1,3.735,0l8.591,22.412A2,2,0,0,1,20.091,30H2.909a2,2,0,0,1-1.867-2.716Z" transform="translate(660.79) rotate(13)" fill="#c8463f"/>
+  </g>
+</svg>
