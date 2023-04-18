@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Newsletter Form</h1>
+
+  <form id="newsletter-form">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <div class="g-recaptcha" data-sitekey="6Lfba4AlAAAAAFiQ_fNW68l4W7s8wHM4a6Qwvz4q"></div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#newsletter-form').submit(function(e) {
+        e.preventDefault();
+
+        let email = $('#email').val();
+        let captcha = grecaptcha.getResponse();
+
+        $.ajax({
+          url: 'https://apiv1.vio-v.com/send_email',
+          method: 'GET',
+          data: { email: email, captcha: captcha },
+          success: function(response) {
+            $('#response').html('Email sent to ' + email);
+            console.log('Email sent successfully');
+          },
+          error: function(xhr, status, error) {
+            $('#response').html('Error: ' + error);
+            console.log('Error sending email: ' + error);
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
