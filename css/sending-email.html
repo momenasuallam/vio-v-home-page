@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Include reCAPTCHA API script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <title>Testing</title>
+</head>
+<body>
+
+  <h1>Register now</h1>
+
+  <form id="email-form">
+   
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <div class="g-recaptcha" data-sitekey="6LfHOyMUAAAAADcHwG2RkJlBsbOKhDZoJiZfChzC"></div>
+  
+    <button type="submit" id="submit-btn">Send</button>
+  
+    <div id="response-msg"></div>
+  </form>
+  
+<script>
+  $(document).ready(function() {
+  // Reset reCAPTCHA widget
+  function resetRecaptcha() {
+    grecaptcha.reset();
+  }
+
+  // Send email function
+  function sendEmail() {
+    // Get form data
+    var email = $('#email').val();
+    var captcha = grecaptcha.getResponse();
+
+    // Make API call
+    $.ajax({
+      url: 'https://apiv1.vio-v.com/send_email',
+      type: 'GET',
+      data: {
+        email: email,
+        captcha: captcha
+      },
+      success: function(response) {
+        console.log('succes response',response);
+        console.log('succes message response',response.message);
+       
+        // Check if email was sent successfully
+        if (response.success)  {
+          // Reset form and reCAPTCHA widget
+          $('#email-form')[0].reset();
+          resetRecaptcha();
+
+          // Show success message
+          $('#response-msg').html(response.message);
+        } else {
+          // Show error message
+          $('#response-msg').html(response.message);
+          resetRecaptcha();
+
+        }
+      },
+      error: function(xhr, status, error) {
+        console.log('xhr',xhr, 'status',status, 'error',error)
+        // Show error message
+        $('#response-msg').html(response.error);
+      }
+    });
+  }
+
+  // Submit form event
+  $('#email-form').submit(function(event) {
+    event.preventDefault();
+
+    // Check if reCAPTCHA is validated
+    if (grecaptcha.getResponse().length === 0) {
+      // Show error message
+      $('#response-msg').html('Please complete the reCAPTCHA.');
+
+      // Reset reCAPTCHA widget
+      resetRecaptcha();
+    } else {
+      // Send email
+      sendEmail();
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

@@ -15,6 +15,9 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include reCAPTCHA API script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <title>Vio-V</title>
   </head>
@@ -36,7 +39,9 @@
                 <li class="menu-item">
                   <a href="#insighttab" class="menu-link">Einblick</a>
                 </li>
-                <li class="menu-item"><a href="#faqtab" class="menu-link">FAQ</a></li>
+                <li class="menu-item">
+                  <a href="#faqtab" class="menu-link">FAQ</a>
+                </li>
                 <li class="menu-item">
                   <a href="#socialmediatab" class="menu-link">Social Media</a>
                 </li>
@@ -44,15 +49,27 @@
               <div class="bottommenumbl">
                 <ul class="menu-inner menubottominner">
                   <li class="menu-item">
-                    <a href="#" class="menu-link" style="opacity: 0.4"
+                    <a
+                      href="https://forum.vio-v.com/lexicon/index.php?lexicon/"
+                      target="_blank"
+                      class="menu-link"
+                      style="opacity: 0.4"
                       >Lexikon</a
                     >
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="menu-link" style="opacity: 0.4">Forum</a>
+                    <a
+                      href="https://forum.vio-v.com/"
+                      target="_blank"
+                      class="menu-link"
+                      style="opacity: 0.4"
+                      >Forum</a
+                    >
                   </li>
                 </ul>
-                <a class="menu-block btn btn-outline" href="#">JETZT SPIELEN</a>
+                <a class="menu-block btn btn-outline playnowme" href="#"
+                  >JETZT SPIELEN</a
+                >
               </div>
               <div class="copyrightmbl">
                 <div class="d-flex align-items-center justify-content-between">
@@ -73,7 +90,10 @@
               </div>
             </div>
           </div>
-          <a class="menu-block hideonmblbtn1 btn btn-outline playnowme" id="" href="#"
+          <a
+            class="menu-block hideonmblbtn1 btn btn-outline playnowme"
+            id=""
+            href="#"
             >JETZT SPIELEN</a
           >
           <div class="burger" id="burger">
@@ -135,7 +155,12 @@
                 Version von Grand Theft Auto V. Deine Grand Theft Auto V Version
                 muss eine lizensierte Version sein.
               </p>
-              <a class="btn btn-fill">GTA:V KAUFEN</a>
+              <a
+                href="https://www.rockstargames.com/de/gta-v/"
+                target="_blank"
+                class="btn btn-fill"
+                >GTA:V KAUFEN</a
+              >
             </div>
             <div class="scriptsdiv scriptsdiv2">
               <h6 class="topsmheading">SCHRITT 2</h6>
@@ -147,7 +172,12 @@
                 mit unseren Server verbinden und die Welt von Los Santos
                 unsicher machen.
               </p>
-              <a class="btn btn-fill">VIO-V LAUNCHER</a>
+              <a
+                href="https://launcher.vio-v.com/"
+                target="_blank"
+                class="btn btn-fill"
+                >VIO-V LAUNCHER</a
+              >
             </div>
             <img src="./img/vio-v_arrow2.svg" class="arrow2" />
           </div>
@@ -172,7 +202,12 @@
             begleite uns auf dem Weg zum größten GTA:V Server im deutschen Raum.
           </p>
 
-          <a class="btn btn-fill" href="#">ZUM FORUM</a>
+          <a
+            class="btn btn-fill"
+            href="https://forum.vio-v.com/"
+            target="_blank"
+            >ZUM FORUM</a
+          >
         </div>
       </div>
       <img
@@ -300,7 +335,10 @@
         </div>
       </div>
 
-      <img src="./img/vio-v_logo-white_bildmarke_halved-right.svg" class="bglogosideright" />
+      <img
+        src="./img/vio-v_logo-white_bildmarke_halved-right.svg"
+        class="bglogosideright"
+      />
     </section>
     <!-- Video bottom border Start -->
     <div class="bordercurve">
@@ -348,7 +386,7 @@
     <!-- steps bottom border End -->
 
     <!-- FAQ Section Start -->
-    <section class="faq-section" >
+    <section class="faq-section">
       <div class="container">
         <div class="mainstepdiv">
           <div class="stepsdivs">
@@ -360,7 +398,12 @@
                 Version von Grand Theft Auto V. Deine Grand Theft Auto V Version
                 muss eine lizensierte Version sein.
               </p>
-              <a class="btn btn-fill">GTA:V KAUFEN</a>
+              <a
+                class="btn btn-fill"
+                href="https://www.rockstargames.com/de/gta-v/"
+                target="_blank"
+                >GTA:V KAUFEN</a
+              >
             </div>
             <div class="scriptsdiv scriptsdiv2">
               <h6 class="topsmheading">SCHRITT 2</h6>
@@ -372,7 +415,12 @@
                 mit unseren Server verbinden und die Welt von Los Santos
                 unsicher machen.
               </p>
-              <a class="btn btn-fill">VIO-V LAUNCHER</a>
+              <a
+                class="btn btn-fill"
+                href="https://launcher.vio-v.com/"
+                target="_blank"
+                >VIO-V LAUNCHER</a
+              >
             </div>
             <img src="./img/vio-v_dog.svg" class="dogimg" />
           </div>
@@ -384,7 +432,7 @@
               Account erstellen. Nach der Erstellung deines Kontos kannst du
               Direkt loslegen und Los Santos unsicher machen.
             </p>
-            <a class="btn btn-outline">JETZT SPIELEN</a>
+            <a class="btn btn-outline playnowme">JETZT SPIELEN</a>
           </div>
           <img src="./img/vio-v_arrow3.svg" class="arrow3" />
         </div>
@@ -637,7 +685,7 @@
                   <button
                     type="button"
                     data-toggle="collapse"
-                    data-target="#collapse5"
+                    data-target="#collapse7"
                     aria-expanded="false"
                     aria-controls="collapse7"
                     class="btn btn-link collapsed collapsible-link"
@@ -671,11 +719,19 @@
           </div>
           <!-- End -->
 
-          <a class="btn btn-fill" href="#">ZUM LEXIKON</a>
+          <a
+            class="btn btn-fill"
+            href="https://forum.vio-v.com/lexicon/index.php?lexicon/"
+            target="_blank"
+            >ZUM LEXIKON</a
+          >
         </div>
       </div>
-      
-      <img src="./img/vio-v_logo-white_bildmarke_halved-left.svg" class="bglogosideleft" />
+
+      <img
+        src="./img/vio-v_logo-white_bildmarke_halved-left.svg"
+        class="bglogosideleft"
+      />
     </section>
 
     <!-- Instagram top border Start -->
@@ -758,8 +814,16 @@
           </div>
           <div>
             <span>Cookie Einstellungen</span>
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
+            <a
+              href="https://forum.vio-v.com/index.php?legal-notice/"
+              target="_blank"
+              >Impressum</a
+            >
+            <a
+              href="https://forum.vio-v.com/index.php?datenschutzerklaerung/"
+              target="_blank"
+              >Datenschutz</a
+            >
           </div>
         </div>
         <p>
@@ -773,157 +837,177 @@
     </footer>
     <!-- Footer End -->
 
-
-      
-    
     <!-- Cookies modal open when page load -->
-<div class="modal" id="cookiesmodal1" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="cookiesmodal1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-    
-      <div class="modal-body">
-       <h6 class="topsmheading">EINWILLIGUNG ZU</h6>
-       <h2 class="toplgheading">COOKIES & DATEN</h2>
-       <p class="basicp">
-        Auf dieser Website nutzen wir Cookies und vergleichbare Funktionen zur Verarbeitung von Endgeräteinformationen und personenbezogenen Daten. Diese Einwilligung ist freiwillig, für die Nutzung unserer Website nicht erforderlich und kann jederzeit über die „Cookie-Einstellungen“ im Footer widerrufen werden.
-       </p>
-       <div class="btngroup">
-         <button type="button" class="btn btn-fill" data-dismiss="modal">ALLE AKZEPTIEREN</button>
-         <button type="button" id="selectioncookies" class="btn btn-outline">AUSWAHL TREFFEN</button>
-       </div>
-      </div>
-    
-    </div>
-  </div>
-</div>
-
-
-    <!-- Cookies modal 2 for selection -->
-    <div class="modal" id="selectioncookiesmodal"  tabindex="-1" role="dialog" aria-labelledby="selectioncookiesmodal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div
+      class="modal"
+      id="cookiesmodal1"
+      tabindex="-1"
+      data-backdrop="static"
+      data-keyboard="false"
+      role="dialog"
+      aria-labelledby="cookiesmodal1"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
-        
           <div class="modal-body">
-           <h6 class="topsmheading">EINWILLIGUNG ZU</h6>
-           <h2 class="toplgheading">COOKIES & DATEN</h2>
-           <p class="basicp">
-            Diese Einwilligung kann jederzeit über die „Cookie-Einstellungen“ im Footer widerrufen werden.
-           </p>
-           <div class="formdiv">
-             <form>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="Benötigtecoo" checked>
-                <label class="form-check-label" for="Benötigtecoo">
-                  Benötigte Cookies
-                </label>
+            <h6 class="topsmheading">EINWILLIGUNG ZU</h6>
+            <h2 class="toplgheading">COOKIES & DATEN</h2>
+            <div class="showfirstcookiesdata">
+              <p class="basicp">
+                Auf dieser Website nutzen wir Cookies und vergleichbare Funktionen
+                zur Verarbeitung von Endgeräteinformationen und personenbezogenen
+                Daten. Diese Einwilligung ist freiwillig, für die Nutzung unserer
+                Website nicht erforderlich und kann jederzeit über die
+                „Cookie-Einstellungen“ im Footer widerrufen werden.
+              </p>
+            </div>
+            <div class="showsecondcookiesdata">
+              <p class="basicp">
+                Diese Einwilligung kann jederzeit über die „Cookie-Einstellungen“
+                im Footer widerrufen werden.
+              </p>
+              <div class="formdiv">
+                <form>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="Benötigtecoo"
+                      checked
+                    />
+                    <label class="form-check-label" for="Benötigtecoo">
+                      Benötigte Cookies
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="Marketingcoo"
+                    />
+                    <label class="form-check-label" for="Marketingcoo">
+                      Marketing Cookies
+                    </label>
+                  </div>
+                </form>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="Marketingcoo">
-                <label class="form-check-label" for="Marketingcoo">
-                  Marketing Cookies
-                </label>
+            </div>
+           
+            <div class="btngroup">
+              <button type="button" class="btn btn-fill" id="accept-cookies" data-dismiss="modal">
+                ALLE AKZEPTIEREN
+              </button>
+              <div class="showfirstcookiesdata">
+                <button
+                type="button"
+                id="selectioncookies"
+                class="btn btn-outline"
+              >
+                AUSWAHL TREFFEN
+              </button>
               </div>
-             </form>
-           </div>
-           <div class="btngroup">
-             <button type="button" class="btn btn-fill" data-dismiss="modal">ALLE AKZEPTIEREN</button>
-             <a class="btn btn-outline">AUSWAHL SPEICHERN</a>
-           </div>
+              <div class="showsecondcookiesdata">
+                <button type="button" id="selectionacceptcookies" class="btn btn-outline">AUSWAHL SPEICHERN</button>
+              </div> 
+             
+            </div>
           </div>
-        
         </div>
       </div>
     </div>
 
-
-     <!-- Register email modal 1 -->
-     <div class="modal modalemailmain" id="emailregistermodal1" tabindex="-1" role="dialog" aria-labelledby="emailregistermodal1" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <!-- Register email modal -->
+    <div
+      class="modal modalemailmain"
+      id="emailregistermodal1"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="emailregistermodal1"
+      data-backdrop="static"
+      data-keyboard="false"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div>
-            <button class="emailmodalclosebtn" type="button" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button
+              class="emailmodalclosebtn"
+              type="button"
+              data-dismiss="modal"
+            >
+              <img src="./img/vio-v_x-mark.svg" />
+            </button>
           </div>
           <div class="modal-body">
-    <div class="emailmodalbody">
-      <h6 class="topsmheading">SCHRITT 1</h6>
-      <h2 class="toplgheading">GRAND THEFT AUTO V</h2>
-      <p class="basicp">
-       Du besitzt eine Lizensierte Grand Theft Auto V Version?
-      </p>
-      <div class="btngroup">
-       <button class="btn btn-fill" id="yasstep2" >JA</button>
-       <button class="btn btn-outline">NEIN, GTA:V KAUFEN</button>
-     </div>
-      <div class="formdiv">
-       <h6 class="topsmheading">DU HAST GERADE KEINE ZEIT?</h6>
-       <p class="basicp">
-         Dann lass dich von uns in den nächsten Tagen daran erinnern, dass du dich bei uns Registrieren wolltest.
-       </p>
-       <form id="newsletter-form">
-         <div class="emaildiv">
-           <input type="email" id="email" name="email" required>
-           <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-         </div>
-         <div class="g-recaptcha" data-sitekey="6Lfba4AlAAAAAFiQ_fNW68l4W7s8wHM4a6Qwvz4q"></div>
-       </form>
-       
-       
-      </div>
+            <div class="emailmodalbody">
+              <div id="step1email">
+                <h6 class="topsmheading">SCHRITT 1</h6>
+                <h2 class="toplgheading">GRAND THEFT AUTO V</h2>
+                <p class="basicp">
+                  Du besitzt eine Lizensierte Grand Theft Auto V Version?
+                </p>
+                <div class="btngroup">
+                  <button class="btn btn-fill" id="yasstep2">JA</button>
+                  <a
+                    class="btn btn-outline"
+                    href="https://www.rockstargames.com/de/gta-v/"
+                    >NEIN, GTA:V KAUFEN</a
+                  >
+                </div>
+              </div>
+              <div id="step2email">
+                <h6 class="topsmheading">SCHRITT 2</h6>
+                <h2 class="toplgheading">VIO-V LAUNCHER</h2>
+                <p class="basicp">
+                  Vio-V Launcher herunterladen und direkt registrieren.
+                </p>
+                <div class="btngroup">
+                  <a
+                    class="btn btn-fill"
+                    href="https://launcher.vio-v.com/"
+                    style="width: auto"
+                    >LAUNCHER HERUNTERLADEN</a
+                  >
+                </div>
+              </div>
 
-    </div>          
+              <div class="formdiv">
+                <h6 class="topsmheading">DU HAST GERADE KEINE ZEIT?</h6>
+                <p class="basicp">
+                  Dann lass dich von uns in den nächsten Tagen daran erinnern,
+                  dass du dich bei uns Registrieren wolltest.
+                </p>
+                <form id="email-form">
+                  <div class="emaildiv">
+                    <input type="email" id="email" name="email" />
+                    
+                    <button type="submit" id="submit-btn">
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div style="margin-top: 20px;"
+                      class="g-recaptcha"
+                      data-sitekey="6LfHOyMUAAAAADcHwG2RkJlBsbOKhDZoJiZfChzC"
+                    ></div>
+                  <p
+                    class="basicp"
+                    id="response-msg"
+                    style="margin-top: 20px"
+                  ></p>
+                </form>
+              </div>
+            </div>
           </div>
-        
         </div>
       </div>
     </div>
-
-     <!-- Register email modal 2 -->
-     <div class="modal modalemailmain" id="emailregistermodal2" tabindex="-1" role="dialog" aria-labelledby="emailregistermodal2" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div>
-            <button class="emailmodalclosebtn" type="button" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="modal-body">
-    <div class="emailmodalbody">
-      <h6 class="topsmheading">SCHRITT 2</h6>
-      <h2 class="toplgheading">VIO-V LAUNCHER</h2>
-      <p class="basicp">
-        Vio-V Launcher herunterladen und direkt registrieren.
-      </p>
-      <div class="btngroup">
-       <a class="btn btn-fill" href="#" style="width: auto;" >LAUNCHER HERUNTERLADEN</a>
-     </div>
-      <div class="formdiv">
-       <h6 class="topsmheading">DU HAST GERADE KEINE ZEIT?</h6>
-       <p class="basicp">
-        Dann lass dich von uns in den nächsten Tagen daran erinnern, dass du dich bei uns Registrieren wolltest.
-       </p>
-       <form id="newsletter-form">
-         <div class="emaildiv">
-           <input type="email" id="email" name="email" required>
-           <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-         </div>
-         <div class="g-recaptcha" data-sitekey="6Lfba4AlAAAAAFiQ_fNW68l4W7s8wHM4a6Qwvz4q"></div>
-       </form>
-       
-       
-      </div>
-
-    </div>          
-          </div>
-        
-        </div>
-      </div>
-    </div>
-
-
 
     <!-- Back to top button -->
-<a id="backtotop"></a>
+    <a id="backtotop">
+      <img src="./img/vio-v_arrow-up.svg" />
+    </a>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="./js/scripts.js"></script>
   </body>
