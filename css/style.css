@@ -186,7 +186,8 @@ video {
 }
 
 .scrollbg {
-  backdrop-filter: blur(10px);
+  background: transparent linear-gradient(180deg, #1D1D1D 0%, #1D1D1DE0 41%, #1D1D1D00 100%) 0% 0% no-repeat padding-box;
+  opacity: 1
 }
 
 .navbar {
@@ -1137,6 +1138,19 @@ svg:not(:root) {
   fill: var(--colorF1F);
 }
 
+@media(max-width:1200px) {
+  .custom-shape-divider-top-1681545919 {
+    margin-top: -66px;
+  }
+  .Featuresrow .col-md-8{
+    margin-bottom: 75px;
+  }
+  .michaelimg {
+    position: relative;
+    bottom: -45px;
+}
+}
+
 @media(max-width:992px) {
   .michaelimg {
     display: none;
@@ -1158,6 +1172,12 @@ svg:not(:root) {
     width: 100%;
   }
 }
+@media(max-width:768px) {
+  .Featuresrow .col-md-8{
+    margin-bottom: 0px;
+  }
+}
+
 
 /* Video section */
 .video-section {
@@ -1329,6 +1349,31 @@ svg:not(:root) {
   position: relative;
 }
 
+@media(max-width:1300px) {
+  .playnowsectiondiv {
+    max-width: 500px;
+    margin-top: 30px;
+
+  }
+  .playnowsectiondiv p {
+    font: normal normal normal 14px/22px var(--ffroboto);
+}
+.dogimg {
+  width: 220px;
+}
+.arrow3 {
+  position: absolute;
+  width: 40%;
+  top: 60%;
+  left: 0;
+}
+
+}
+@media(max-width:1200px) {
+  .faq-section{
+    margin-top: -32px;
+  }
+}
 @media(max-width:992px) {
   .dogimg {
     display: none;
@@ -1634,4 +1679,10 @@ svg:not(:root) {
 
 .showsecondcookiesdata{
   display: none;
+}
+.opencookiesmodal{
+  cursor: pointer;
+}
+.form-check-input:disabled~.form-check-label, .form-check-input[disabled]~.form-check-label {
+  opacity: 1 !important;
 }

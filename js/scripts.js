@@ -37,6 +37,38 @@ $(window).on("scroll", function () {
   }
 });
 
+  // Get all the links in the navbar
+  const navbarLinks = $('.menu a');
+
+  // Add a scroll event listener to the window
+  $(window).scroll(function() {
+    // Get the current scroll position
+    const currentPosition = $(this).scrollTop();
+
+    // Loop through each link in the navbar
+    navbarLinks.each(function() {
+      // Get the ID of the corresponding section on the page
+      const sectionID = $(this).attr('href');
+
+      // Get the offset of the section from the top of the page
+      const sectionOffset = $(sectionID).offset().top;
+
+      // Check if the section is visible in the viewport
+      if (sectionOffset <= currentPosition && sectionOffset + $(sectionID).outerHeight() > currentPosition) {
+        // If the section is visible, highlight the corresponding link in the navbar
+        $('.navbar .active').removeClass('active');
+        $(this).addClass('active');
+      }
+    });
+  });
+
+
+
+
+
+
+
+
 // back to top button
 var btn = $("#backtotop");
 
@@ -54,6 +86,9 @@ btn.on("click", function (e) {
 });
 
 // For cookies modal
+$(".opencookiesmodal").click(function () {
+  $("#cookiesmodal1").show();
+});
 $("#selectioncookies").click(function () {
   $(".showfirstcookiesdata").hide();
   $(".showsecondcookiesdata").show();
@@ -186,6 +221,8 @@ $(document).ready(function () {
     });
   }
 
+  $("#email").addClass("erroremail");
+      $("#submit-btn").addClass("errorbtn");
   $("#email-form").submit(function (event) {
     event.preventDefault();
     var email = $("#email").val();
