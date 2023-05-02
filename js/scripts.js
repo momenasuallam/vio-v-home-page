@@ -37,36 +37,34 @@ $(window).on("scroll", function () {
   }
 });
 
-  // Get all the links in the navbar
-  const navbarLinks = $('.menu a');
 
-  // Add a scroll event listener to the window
+
+
+$(document).ready(function() {
+  // get the navbar element and all menu items
+  var navbar = $(".menu");
+  var menuItems = navbar.find(".menu-link");
+
+  // handle scrolling events
   $(window).scroll(function() {
-    // Get the current scroll position
-    const currentPosition = $(this).scrollTop();
+    // get the current scroll position
+    var scrollPos = $(document).scrollTop();
 
-    // Loop through each link in the navbar
-    navbarLinks.each(function() {
-      // Get the ID of the corresponding section on the page
-      const sectionID = $(this).attr('href');
+    // loop through each menu item
+    menuItems.each(function() {
+      // get the href attribute and corresponding section element
+      var href = $(this).attr("href");
+      var section = $(href);
 
-      // Get the offset of the section from the top of the page
-      const sectionOffset = $(sectionID).offset().top;
-
-      // Check if the section is visible in the viewport
-      if (sectionOffset <= currentPosition && sectionOffset + $(sectionID).outerHeight() > currentPosition) {
-        // If the section is visible, highlight the corresponding link in the navbar
-        $('.navbar .active').removeClass('active');
-        $(this).addClass('active');
+      // if the section element exists and its top offset is above the navbar
+      if (section.length && section.offset().top - navbar.outerHeight() <= scrollPos) {
+        // highlight the corresponding menu item
+        menuItems.removeClass("active");
+        $(this).addClass("active");
       }
     });
   });
-
-
-
-
-
-
+});
 
 
 // back to top button
@@ -129,6 +127,7 @@ document
     // Hide the popup
     document.getElementById("cookiesmodal1").style.display = "none";
   });
+
 
 // For Registermodal modal
 $(".playnowme").click(function () {
@@ -204,6 +203,8 @@ $(document).ready(function () {
           // Reset form and reCAPTCHA widget
           $("#email-form")[0].reset();
           resetRecaptcha();
+          $("#email").addClass("erroremail");
+          $("#submit-btn").addClass("errorbtn");
 
           // Show success message
           $("#response-msg").html(response.message);
@@ -211,6 +212,8 @@ $(document).ready(function () {
           // Show error message
           $("#response-msg").html(response.message);
           resetRecaptcha();
+          $("#email").removeClass("erroremail");
+          $("#submit-btn").removeClass("errorbtn");
         }
       },
       error: function (xhr, status, error) {
@@ -221,38 +224,65 @@ $(document).ready(function () {
     });
   }
 
+  // function to validate email format
+  function isValidEmail(email) {
+    // use a regular expression to validate email format
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
   $("#email").addClass("erroremail");
-      $("#submit-btn").addClass("errorbtn");
-  $("#email-form").submit(function (event) {
-    event.preventDefault();
-    var email = $("#email").val();
-    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  $("#submit-btn").addClass("errorbtn");
 
-    if (!emailRegex.test(email)) {
-      $("#response-msg").html("Please enter a valid email address.");
-      $("#email").addClass("erroremail");
-      $("#submit-btn").addClass("errorbtn");
-    } else {
-      $("#response-msg").html("");
-      $("#email").removeClass("erroremail");
-      $("#submit-btn").removeClass("errorbtn");
-      // AJAX call to submit form goes here
-      // Submit form event
-      $("#email-form").submit(function (event) {
-        event.preventDefault();
+    // select the email input field and form
+    var emailInput = $('input[name="email"]');
+    var form = $("#email-form");
+  
+    // add a keyup event listener to the email input field
+    emailInput.keyup(function() {
+      // get the email value from the input field
+      var email = $(this).val();
+  
+      // check if the email is empty or incorrect format
+      if (email === '' || !isValidEmail(email)) {
+        // add red color to the email input field
+        $(this).addClass("erroremail");
+        $("#submit-btn").addClass("errorbtn");
+        // $("#response-msg").html("Please enter a valid email address.");
+        // disable form submission
+        form.prop('disabled', true);
+      } else {
+        // remove red color from the email input field
+        $(this).removeClass("erroremail");
+        $("#submit-btn").removeClass("errorbtn");
+        // $("#response-msg").html("");
+        // enable form submission
+        form.prop('disabled', false);
+      }
+    });
+  
+    // add a submit event listener to the form
+    form.submit(function(event) {
+      // prevent default form submission
+      event.preventDefault();
+  
+      // get the email value from the input field
+      var email = emailInput.val();
+  
+      // Check if reCAPTCHA is validated
+      if (grecaptcha.getResponse().length === 0) {
+        // Show error message
+        $("#response-msg").html("Please complete the reCAPTCHA.");
 
-        // Check if reCAPTCHA is validated
-        if (grecaptcha.getResponse().length === 0) {
-          // Show error message
-          $("#response-msg").html("Please complete the reCAPTCHA.");
+        // Reset reCAPTCHA widget
+        resetRecaptcha();
+      } else {
+        // Send email
+        sendEmail();
+      }
 
-          // Reset reCAPTCHA widget
-          resetRecaptcha();
-        } else {
-          // Send email
-          sendEmail();
-        }
-      });
-    }
-  });
+    });
+  
+  
+  
 });

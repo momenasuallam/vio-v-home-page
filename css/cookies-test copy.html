@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Activate Google Tag Script</title>
+    <script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <h1>Activate Google Tag Script</h1>
+    <button id="remove-script">Remove Google Tag Script</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#remove-script").click(function() {
+                $('script[src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"]').remove();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cookie Test</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h1>Cookie Test</h1>
+	<p>
+		<label>
+			<input type="checkbox" id="marketingCookiesCheckbox">
+			Marketing Cookies
+		</label>
+	</p>
+	<p>
+		<button id="acceptAllCookiesButton">Accept All Cookies</button>
+		<button id="saveButton">Save</button>
+	</p>
+	<script>
+		$(document).ready(function() {
+			// Check if marketing cookies are already accepted
+			var marketingCookiesAccepted = getCookie("marketingCookiesAccepted");
+			if (marketingCookiesAccepted == "true") {
+				$("#marketingCookiesCheckbox").prop("checked", true);
+				console.log("Marketing cookies accepted from previous visit.");
+				activateGoogleTagScript();
+			} else {
+				console.log("Marketing cookies not accepted from previous visit.");
+			}
+
+			// Accept all cookies button
+			$("#acceptAllCookiesButton").click(function() {
+				setCookie("marketingCookiesAccepted", true, 365);
+				$("#marketingCookiesCheckbox").prop("checked", true);
+				console.log("All cookies accepted.");
+				activateGoogleTagScript();
+			});
+
+			// Save button
+			$("#saveButton").click(function() {
+				var marketingCookiesAccepted = $("#marketingCookiesCheckbox").is(":checked");
+				if (marketingCookiesAccepted) {
+					setCookie("marketingCookiesAccepted", true, 365);
+					console.log("Marketing cookies accepted and saved.");
+					activateGoogleTagScript();
+				} else {
+					console.log("Marketing cookies not accepted and saved.");
+					removeGoogleTagScript();
+				}
+			});
+
+			// Activate Google Tag Script
+			function activateGoogleTagScript() {
+				console.log("Google Tag Script activated.");
+				// Code to activate Google Tag Script
+			}
+
+			// Remove Google Tag Script
+			function removeGoogleTagScript() {
+				console.log("Google Tag Script removed.");
+				// Code to remove Google Tag Script
+			}
+
+			// Set cookie
+			function setCookie(name, value, days) {
+				var expires = "";
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+					expires = "; expires=" + date.toUTCString();
+				}
+				document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+			}
+
+			// Get cookie
+			function getCookie(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for(var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+				}
+				return null;
+			}
+
+			// Delete cookie
+			function deleteCookie(name) {
+				document.cookie = name + "=; Max-Age=-99999999;";
+			}
+		});
+	</script>
+</body>
+</html>
