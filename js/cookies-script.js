@@ -27,6 +27,7 @@ $(document).ready(function() {
       console.log("Marketing cookies accepted and saved.");
       activateGoogleTagScript();
     } else {
+      setCookie("marketingCookiesAccepted", false, 365);
       console.log("Marketing cookies not accepted and saved.");
       removeGoogleTagScript();
     }
